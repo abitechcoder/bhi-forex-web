@@ -27,6 +27,7 @@ function Hero() {
             
           <Image
             src={"/image1.jpg"}
+            alt=""
             placeholder="empty"
             fill
             className="object-cover object-center rounded-lg"
