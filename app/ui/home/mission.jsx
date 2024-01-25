@@ -25,7 +25,7 @@ function Mission() {
             the knowledge and skills you need to thrive in the forex market.
             Click the button below to enroll now.
           </p>
-          <Link href={"#"} className="btn-secondary">
+          <Link href={"/signup"} className="btn-secondary">
             Enrol Now
           </Link>
         </div>

@@ -16,9 +16,9 @@
     @apply py-[10px] px-[30px] bg-transparent text-green-500 rounded-lg border border-solid border-green-500 font-bold hover:bg-green-600 hover:text-white;
   }
   .section-container {
-    @apply container mx-auto p-8;
+    @apply container mx-auto pt-8;
   }
   .card {
-    @apply flex flex-col gap-8 items-center p-6 bg-gray-900 rounded-lg
+    @apply flex flex-col gap-8 items-center p-6 bg-gray-900 rounded-lg justify-between
   }
 }

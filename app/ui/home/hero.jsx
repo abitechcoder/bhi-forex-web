@@ -16,7 +16,7 @@ function Hero() {
           community dedicated to teaching you the art of profitable forex
           trading.
         </p>
-        <Link href={"#"} className="btn-secondary">
+        <Link href={"/signup"} className="btn-secondary">
           Enrol now
         </Link>
       </div>
