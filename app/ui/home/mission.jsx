@@ -4,17 +4,17 @@ import Link from "next/link";
 
 function Mission() {
   return (
-    <section className="section-container">
-      <div className="text-center pt-[100px] pb-[50px]">
+    <section className="section-container px-4 lg:px-0">
+      <div className="text-center pt-[70px] lg:pt-[100px] pb-[30px] lg:pb-[50px]">
         <h2 className={`${lato.className} text-4xl tracking-wider font-bold`}>
           What we <span className="text-green-500">offer</span>
         </h2>
-        <p className="w-[400px] mx-auto mt-4 tracking-wider text-gray-400">
+        <p className="w-full lg:w-[400px] mx-auto mt-4 tracking-wider text-gray-400">
           Your dreams deserve a solid training academy, we've got you covered!
         </p>
       </div>
       <hr className="w-[200px] border-green-500 mx-auto" />
-      <div className="py-[50px] grid grid-cols-3 gap-8">
+      <div className="py-[50px] grid lg:grid-cols-3 gap-8">
         <div className="card">
           <h3 className={`${lato.className} font-bold text-green-500 text-xl`}>
             Forex Education

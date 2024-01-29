@@ -13,10 +13,10 @@ function Navbar() {
   return (
     <header className="container mx-auto py-4 flex items-center justify-between">
       <Link href={"/"}><Image src={"/logo.png"} alt="Company Logo" height={70} width={120} /></Link>
-      <div className="flex gap-8 text-sm">
+      <div className="hidden lg:flex gap-8 text-sm">
         {Links.map(({id, title, route}) => <Link className="hover:text-green-500" key={id} href={route}>{title}</Link>)}
       </div>
-      <div className="flex gap-4">
+      <div className="hidden lg:flex gap-4">
         <Link href={"/login"} className="btn-secondary">
           Login
         </Link>
