@@ -1,7 +1,7 @@
 import React from "react";
 
-function TextInput(prop) {
-  const { title, placeholder_text, type = "text" } = prop;
+const TextInput = React.forwardRef(function TextInput(props, ref) {
+  const { title, placeholder_text, type = "text" } = props;
   return (
     <div className="w-full flex flex-col gap-2">
       <label htmlFor={title}>{title}</label>
@@ -10,9 +10,11 @@ function TextInput(prop) {
         placeholder={placeholder_text}
         id={title}
         className="w-full bg-gray-700 px-4 py-2 rounded-lg"
+        {...props}
+        ref={ref}
       />
     </div>
   );
-}
+});
 
 export default TextInput;
