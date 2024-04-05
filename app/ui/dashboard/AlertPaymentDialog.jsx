@@ -11,7 +11,7 @@ import {
   AlertDialogTrigger,
 } from "../../../components/ui/alert-dialog";
 import { Button } from "../../../components/ui/button";
-import {createSubscription} from "../../lib/action"
+import {createSubscription, getSubscriptions} from "../../lib/action"
 
 const AlertPaymentDialog = ({ data }) => {
   return (
