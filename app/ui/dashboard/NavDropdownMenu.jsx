@@ -12,29 +12,26 @@ import {
   AvatarImage,
 } from "../../../components/ui/avatar";
 import { FiChevronDown } from "react-icons/fi";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
 import SignOut from "./SignOut";
 import Link from "next/link";
+import { getUser } from "../../lib/data";
 
-const NavDropdownMenu = async () => {
-  const cookieStore = cookies();
-  const supabase = createServerComponentClient({ cookies: () => cookieStore });
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+const NavDropdownMenu = async ({ removeAccount = false }) => {
+  const user = await getUser();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <div className="flex gap-4 hover:cursor-pointer group">
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarImage
+              src={user?.avatar_url}
+            />
+            <AvatarFallback className="bg-gray-500 font-bold">{user?.firstname[0]} {user?.lastname[0]}</AvatarFallback>
           </Avatar>
           <div className="flex items-center gap-2">
             <div className="text-sm">
               <p className="font-bold group-hover:text-green-500">
-                {user?.user_metadata.firstname} {user?.user_metadata.lastname}
+                {user?.firstname} {user?.lastname}
               </p>
               {/* <p className="group-hover:text-green-500">abiolaolalekan39@gmail.com</p> */}
             </div>
@@ -43,11 +40,13 @@ const NavDropdownMenu = async () => {
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <Link href={"/account/profile"}>
-          <DropdownMenuItem className="hover:cursor-pointer">
-            Account Setting
-          </DropdownMenuItem>
-        </Link>
+        {!removeAccount && (
+          <Link href={"/account/profile"}>
+            <DropdownMenuItem className="hover:cursor-pointer">
+              Account Setting
+            </DropdownMenuItem>
+          </Link>
+        )}
         <DropdownMenuItem className="hover:cursor-pointer">
           <SignOut />
         </DropdownMenuItem>

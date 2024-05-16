@@ -53,6 +53,7 @@ const plans = [
     ],
     link: "/account/plans",
     payment_url: "https://selar.co/t81177",
+    days: 7,
   },
   {
     title: "3 Months Plan",
@@ -67,6 +68,7 @@ const plans = [
     ],
     link: "/account/plans",
     payment_url: "https://selar.co/t81177",
+    days: 90,
   },
   {
     title: "6 Months Plan",
@@ -81,6 +83,7 @@ const plans = [
     ],
     link: "/account/plans",
     payment_url: "https://selar.co/t81177",
+    days: 180,
   },
   {
     title: "12 Months Plan",
@@ -95,6 +98,7 @@ const plans = [
     ],
     link: "/account/plans",
     payment_url: "https://selar.co/t81177",
+    days: 360,
   },
 ];
 

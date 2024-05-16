@@ -7,7 +7,7 @@ function Hero() {
   return (
     <section className="section-container grid lg:grid-cols-2 lg:h-[80vh] px-4 lg:px-0 gap-8 lg:gap-0">
       <div className="flex flex-col justify-center items-center lg:items-start gap-8">
-        <h1 className={`${lato.className} text-4xl text-center lg:text-left leading-[50px] lg:text-6xl lg:leading-[70px]`}>
+        <h1 className={`text-4xl text-center lg:text-left leading-[50px] lg:text-6xl lg:leading-[70px]`}>
           Discover The Pathway to Mastering the Art of <span className="text-green-500 font-bold">Profitable Forex
           Trading.</span>
         </h1>

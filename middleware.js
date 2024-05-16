@@ -9,7 +9,25 @@ export async function middleware(req) {
   } = await supabase.auth.getSession();
 
   if (!session && req.nextUrl.pathname.startsWith("/account")) {
+    // profile[0]?.role === "user"
     return NextResponse.redirect(new URL("/login", req.url));
+  }
+
+  if (!session && req.nextUrl.pathname.startsWith("/admin/confirm")) {
+    return NextResponse.redirect(new URL("/admin", req.url));
+  }
+
+  if (session && req.nextUrl.pathname.startsWith("/admin/confirm")) {
+    // console.log("ID:", session?.user.id);
+
+    let { data: profile, error } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", session?.user.id);
+
+    if (profile[0].role === "user") {
+      return NextResponse.redirect(new URL("/admin", req.url));
+    }
   }
   return res;
 }

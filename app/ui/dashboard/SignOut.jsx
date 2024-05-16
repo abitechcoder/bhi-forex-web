@@ -12,7 +12,7 @@ const SignOut = () => {
       console.log("Error signing out: ", error);
     }
 
-    router.replace("/login");
+    router.refresh();
   };
   return <div onClick={handleSignOut}>SignOut</div>;
 };

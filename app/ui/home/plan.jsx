@@ -25,11 +25,11 @@ function Plan({ plan }) {
 
   return (
     <div className="card">
-      <h3 className={`${lato.className} text-green-500 text-xl`}>
+      <h3 className={`text-green-500 text-xl`}>
         {plan?.title}
       </h3>
 
-      <h3 className={`${lato.className} font-bold text-green-500 text-4xl`}>
+      <h3 className={`font-bold text-green-500 text-4xl`}>
         {plan?.amount}
       </h3>
 
